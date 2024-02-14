@@ -1,0 +1,27 @@
+<div class="flex text-xl text-justify mx-16">
+  <span class="text-center"><img src="{{userInfo.avatar_url}}" alt="profile_pic"
+      class="h-[250px] w-[250px] rounded-full" />
+    <a href="{{userInfo.html_url}}">{{userInfo.html_url}}</a>
+  </span>
+  <div class="align-middle h-min my-auto ml-[10%]">
+    <span class="font-black">{{userInfo.name}}</span> <br />
+    <span>{{userInfo.bio}}</span> <br /><br />
+    <span class="font-black">Location: </span>{{userInfo.location}} <br />
+    <span class="font-black">Twitter: </span><a href="https://twitter.com/{{userInfo.twitter_username}}">
+      https://twitter.com/{{userInfo.twitter_username}} </a>
+  </div>
+</div><br />
+<section id="repo-card-section" class="grid grid-cols-[1fr_1fr] grid-rows-[repeat(3,200px)] gap-2.5 w-min mx-auto">
+  <app-repo-card
+    *ngFor="let repo of repoList.slice((currentPage - 1) * reposPerPage, currentPage * reposPerPage); trackBy: trackByIndex"
+    [repo]="repo" />
+</section>
+<br /><br />
+<div class="block w-max mx-auto bg-blue-500 rounded-md">
+  <button type="button" class="px-2 py-1 text-white" *ngFor="let page of paginationButtons; trackBy: trackByIndex"
+    (click)="onPageChange(page)">{{ page }}</button>
+</div>
+<div class="mt-10 block w-max mx-auto">
+  <button class="mr-2 bg-blue-500 rounded-md px-2 py-1 text-white" (click)="onPageChange(1)">Older</button>
+  <button class="bg-blue-500 rounded-md px-2 py-1 text-white" (click)="onPageChange(numberOfPages)">Newer</button>
+</div>

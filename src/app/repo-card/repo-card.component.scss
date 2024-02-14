@@ -1,0 +1,7 @@
+#repo-card {
+    @apply border-2 border-green-700 m-[0.5rem] p-2 bg-red-300 h-[200px] w-[600px] overflow-hidden text-ellipsis;
+}
+
+#repo-topics {
+    @apply bg-blue-500 rounded-lg mr-2 p-1.5 text-white;
+}

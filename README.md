@@ -1,43 +1,37 @@
 # Fyle Frontend Challenge
 
-## Who is this for?
+This project is a simple Angular application that allows users to search for GitHub users by their username and view their profile information along with a list of their repositories.
 
-This challenge is meant for candidates who wish to intern at Fyle and work with our engineering team. The candidate should be able to commit to at least 6 months of dedicated time for internship.
+## Features
 
-## Why work at Fyle?
+- **User Search:** Users can enter a GitHub username in the search box and submit the form to retrieve user information.
+- **Display User Information:** Upon successful search, the application displays the user's name, bio, location, Twitter username, and avatar. It also provides links to the user's GitHub profile and Twitter account.
+- **Display Repositories:** The application lists the repositories of the searched user, showing the repository name, description, and topics.
+- **Pagination:** Repositories are paginated, with options to navigate between pages.
+- **Error Handling:** Error messages are displayed if the searched user is not found or if there is an issue fetching data from the GitHub API.
 
-Fyle is a fast-growing Expense Management SaaS product. We are ~40 strong engineering team at the moment. 
+## Technologies Used
 
-We are an extremely transparent organization. Check out our [careers page](https://careers.fylehq.com) that will give you a glimpse of what it is like to work at Fyle. Also, check out our Glassdoor reviews [here](https://www.glassdoor.co.in/Reviews/Fyle-Reviews-E1723235.htm). You can read stories from our teammates [here](https://stories.fylehq.com).
-
-## Challenge outline
-
-This challenge involves implementing application using github api. 
-
-The services that you need to use are already implemented - check out ApiService.
-
-You can see details of this challenge [here](https://fyleuniverse.notion.site/fyleuniverse/Fyle-Frontend-development-challenge-cb5085e5e0864e769e7b98c694400aaa)
-
-__Note__ - This challenge is in angular. We work on angular frameworks & after you join we expect the same from you. Hence it is required to complete this assignement in angular itself.
-
-## What happens next?
-
-You will hear back within 48 hours from us via email.
+- **Angular:** The frontend framework used to build the application.
+- **TypeScript:** The programming language used for Angular development.
+- **TailwindCSS:** Styling languages for presenting the application.
+- **GitHub API:** Used to retrieve user information and repositories based on the provided username.
+- **RxJS:** Used for handling asynchronous operations and observables.
 
 ## Installation
 
-1. Fork this repository to your github account.
-2. Clone the forked repository and proceed with steps mentioned below.
+To run this application locally, follow these steps:
 
-### Install requirements
-* Install angular cli [Ref](https://angular.io/cli)
-* `npm install` in this repository 
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Run `npm install` to install the project dependencies.
+4. Run `ng serve` to start the development server.
+5. Open your browser and visit `http://localhost:4200` to view the application.
 
-## Development server
+## Usage
 
-Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Further help
-
-Visit the [Angular Documentation](https://angular.io/guide/styleguide) to learn more.
-Styling is to be strictly done with [Tailwind](https://tailwindcss.com/docs/installation).
+1. Enter a GitHub username in the search box.
+2. Click the "Submit" button or press Enter to search for the user.
+3. If the user is found, their profile information and repositories will be displayed.
+4. Use pagination buttons to navigate between repository pages.
+5. Click on repository names to view them on GitHub.

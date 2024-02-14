@@ -1,5 +1,23 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
+<form #login="ngForm" [formGroup]="applyForm" class="max-w-sm mx-auto" (ngSubmit)="onSubmit(login)"
+  [ngClass]="{'hidden': isUserAvailable || isLoading}">
+  <div class="mb-5">
+    <label for="username" class="block mb-2 text-sm font-medium text-gray-900">Enter Username</label>
+    <input type="username" id="username" formControlName="username"
+      class="w-full p-2.5 dark:bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+      placeholder="Enter Username" required><br /><br />
+    <button type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
   </div>
+</form>
+
+<div *ngIf="isSearched && !isUserAvailable && !isLoading" class="text-center text-red-900">
+  User Not Found!
 </div>
+
+<app-skeleton [ngClass]="{'hidden': !isLoading}" />
+<div *ngIf="isUserAvailable">
+  <app-main [userInfo]="userInfo" [repoList]="repoList" />
+</div>
+
+<button [ngClass]="{'hidden': !isUserAvailable}" class="block mt-5 mx-auto bg-blue-500 rounded-md px-2 py-1 text-white"
+  (click)="onBack()">HOME</button>

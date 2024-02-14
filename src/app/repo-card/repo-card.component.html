@@ -1,0 +1,9 @@
+<div id="repo-card">
+    <a href="{{repo.html_url}}"> <span class="font-black">{{repo.name}}</span> </a><br />
+    <span class="inline-block h-[10ch] overflow-hidden text-ellipsis">{{repo.description}}</span> <br /><br />
+    <span class="whitespace-nowrap overflow-x-scroll">
+        <span id="repo-topics" *ngFor="let topic of repo.topics; trackBy: trackByIndex">
+            {{topic}}
+        </span>
+    </span>
+</div>
